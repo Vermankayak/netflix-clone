@@ -1,0 +1,13 @@
+.slider__margin{
+  margin-top:-2vw!important;
+}
+
+.text__tag{
+  color: white !important;
+  position:relative!important;
+  top:2.17vw!important;
+}
+
+@media only screen and (max-width:650px) {
+  .text__font{font-size:15px!important}
+}

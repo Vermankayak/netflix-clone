@@ -14,3 +14,9 @@
   right: 0 !important;
   color: white !important;
 }
+
+.nav__bar{
+  background-color: black!important;
+  opacity:0.8!important;
+}
+

@@ -30,7 +30,7 @@
   z-index: 2 !important;
   position: absolute !important;
   height: 80vh !important;
-  width: 30vw !important;
+  width: 380px !important;
   top: 50% !important;
   bottom: 0 !important;
   left: 50%!important;
@@ -39,6 +39,9 @@
   opacity: 0.8 !important;
   transform: translate(-50%, -50%)!important;
   
+}
+.input-width{
+  width: 250px !important;
 }
 .searchBox1 {
   z-index: 3 !important;
@@ -53,4 +56,40 @@
   padding-top: 20vh !important;
   background: transparent !important;
   
+}
+@media only screen and (max-width: 1085px) {
+  .searchBox1 {
+    padding-right: 37vw !important;
+    padding-left: 37vw !important;
+    
+  }
+}
+@media only screen and (max-width: 880px) {
+  .searchBox1 {
+    padding-right: 34vw !important;
+    padding-left: 34vw !important;
+    
+  }
+}
+@media only screen and (max-width: 690px) {
+  .searchBox1 {
+    padding-right: 30vw !important;
+    padding-left: 30vw !important;
+    
+  }
+}
+
+@media only screen and (max-width: 565px) {
+  .searchBox1 {
+    padding-right: 24vw !important;
+    padding-left: 24vw !important;
+    
+  }
+}
+@media only screen and (max-width: 430px) {
+  .searchBox1 {
+    padding-right: 20vw !important;
+    padding-left: 20vw !important;
+    
+  }
 }

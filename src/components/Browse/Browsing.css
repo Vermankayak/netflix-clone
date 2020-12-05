@@ -1,0 +1,14 @@
+.img__poster{
+transition:transform 700ms!important;
+object-fit: contain!important;
+}
+
+.img__poster:hover{
+
+transform: scale(1.12)!important;
+
+}
+.img__large_poster{
+  margin-top:-1.04vw!important;
+  margin-bottom:-2.189vw!important
+}

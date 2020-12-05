@@ -1,59 +1,436 @@
-.netflixImage {
-  background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.8) 0,
-      rgba(0, 0, 0, 0) 40%,
-      rgba(0, 0, 0, 0) 75%,
-      rgba(0, 0, 0, 0.8) 100%
-    ),
-    linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.8) 0,
-      rgba(0, 0, 0, 0) 40%,
-      rgba(0, 0, 0, 0) 75%,
-      rgba(0, 0, 0, 0.8) 100%
-    ),
-    url("../../images/netflix-image.jpg") !important;
-  height: 100vh !important;
-  background-size: cover !important;
-  background-position: center center !important;
-}
-.imgPadder {
-  padding: 0px !important;
-}
-.gradient-im {
-  z-index: 1 !important;
-  position: absolute !important;
-  height: 100vh !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  background-color: black !important;
-  opacity: 0.4 !important;
-}
-.pos {
-  position: relative !important;
-}
-.searchBox {
-  z-index: 2 !important;
-  position: absolute;
-  top: 0 !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  color: white !important;
-  padding-left: 30vw !important;
-  padding-top: 30vh !important;
-  background: transparent!important;
-}
-h1{
-  font-size: 6!important;
-  font-weight: 700!important;
-}
-h4, h5{
-  line-height:3rem!important;
-}
-.start{
-  width:15vw!important;
-}
+
+.grouper{margin-top:20px!important}
+@media only screen and (min-width:1000px) {
+  .netflixImage {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.8) 0,
+        rgba(0, 0, 0, 0) 40%,
+        rgba(0, 0, 0, 0) 75%,
+        rgba(0, 0, 0, 0.8) 100%
+      ),
+      linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 0,
+        rgba(0, 0, 0, 0) 40%,
+        rgba(0, 0, 0, 0) 75%,
+        rgba(0, 0, 0, 0.8) 100%
+      ),
+      url("../../images/netflix-image.jpg") !important;
+    height: 100vh !important;
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+  .imgPadder {
+    padding: 0px !important;
+  }
+  .gradient-im {
+    z-index: 1 !important;
+    position: absolute !important;
+    height: 100vh !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background-color: black !important;
+    opacity: 0.4 !important;
+  }
+  .pos {
+    position: relative !important;
+  }
+  .searchBox {
+    z-index: 2 !important;
+    position: absolute;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    color: white !important;
+    padding-left: 25vw !important;
+    padding-top: 230px !important;
+    background: transparent !important;
+    padding-right:100px!important;
+    overflow: hidden !important;
+  }
+  .h1__tag {
+    padding-left:80px!important;
+    font-size: 45px !important;
+    font-weight: 1000 !important;
+  }
+  .h1__2__tag {
+    padding-left:90px!important;
+    font-size: 45px !important;
+    font-weight: 700 !important;
+  }
+  h5 {
+    line-height: 1rem !important;
+  }
+  .input1 {
+    width: 360px!important;
+    height: 60px !important;
+  }
+  .start {
+    
+    width: 220px!important;
+    background-color: red !important;
+  }
+  .h4__1__tag {
+    display: none !important;
+  }
+  .h4__1 {
+    padding-left:90px!important;
+    font-size: 20px!important;
+    line-height: 6rem !important;
+  }
+  .h31 {
+    padding-left:50px!important;
+    font-size: 15px !important;
+  }
+  .button__text{font-size:25px!important}
+  }
+
+@media only screen and (max-width:1000px) {
+  .netflixImage {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.8) 0,
+        rgba(0, 0, 0, 0) 40%,
+        rgba(0, 0, 0, 0) 75%,
+        rgba(0, 0, 0, 0.8) 100%
+      ),
+      linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 0,
+        rgba(0, 0, 0, 0) 40%,
+        rgba(0, 0, 0, 0) 75%,
+        rgba(0, 0, 0, 0.8) 100%
+      ),
+      url("../../images/netflix-image.jpg") !important;
+    height: 100vh !important;
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+  .imgPadder {
+    padding: 0px !important;
+  }
+  .gradient-im {
+    z-index: 1 !important;
+    position: absolute !important;
+    height: 100vh !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background-color: black !important;
+    opacity: 0.4 !important;
+  }
+  .pos {
+    position: relative !important;
+  }
+  .searchBox {
+    z-index: 2 !important;
+    position: absolute;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    color: white !important;
+    padding-left: 25vw !important;
+    padding-top: 20vw !important;
+    background: transparent !important;
+    padding-right:200px!important;
+    overflow: hidden !important;
+  }
+  .h1__tag {
+    font-size: 38px !important;
+    font-weight: 1000 !important;
+  }
+  .h1__2__tag {
+    font-size: 38px !important;
+    font-weight: 700 !important;
+  }
+  h5 {
+    line-height: 1rem !important;
+  }
+  .input1 {
+    width: 330px!important;
+    height: 60px !important;
+  }
+  .start {
+    margin-top: 2rem !important;
+    width: 330px!important;
+    background-color: red !important;
+    
+  }
+  .h4__1__tag {
+    display: none !important;
+  }
+  .h4__1 {
+    font-size: 20px!important;
+    line-height: 6rem !important;
+  }
+  .h31 {
+    font-size: 15px !important;
+  }
+  }
+
+
+@media only screen and (max-width:740px) {
+  .netflixImage {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.8) 0,
+        rgba(0, 0, 0, 0) 40%,
+        rgba(0, 0, 0, 0) 75%,
+        rgba(0, 0, 0, 0.8) 100%
+      ),
+      linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 0,
+        rgba(0, 0, 0, 0) 40%,
+        rgba(0, 0, 0, 0) 75%,
+        rgba(0, 0, 0, 0.8) 100%
+      ),
+      url("../../images/netflix-image.jpg") !important;
+    height: 100vh !important;
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+  .imgPadder {
+    padding: 0px !important;
+  }
+  .gradient-im {
+    z-index: 1 !important;
+    position: absolute !important;
+    height: 100vh !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background-color: black !important;
+    opacity: 0.4 !important;
+  }
+  .pos {
+    position: relative !important;
+  }
+  .searchBox {
+    z-index: 2 !important;
+    position: absolute;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    color: white !important;
+    padding-left: 14vw !important;
+    padding-top: 25vw !important;
+    background: transparent !important;
+    padding-right:12px!important;
+    overflow: hidden !important;
+  }
+  .h1__tag {
+    font-size: 38px !important;
+    font-weight: 1000 !important;
+  }
+  .h1__2__tag {
+    font-size: 38px !important;
+    font-weight: 700 !important;
+  }
+  h5 {
+    line-height: 3rem !important;
+  }
+  .input1 {
+    width: 330px!important;
+    height: 60px !important;
+  }
+  .start {
+    margin-top: 7vw !important;
+    
+    width: 330px!important;
+    background-color: red !important;
+  }
+  .h4__1__tag {
+    display: none !important;
+  }
+  .h4__1 {
+    font-size: 20px!important;
+    line-height: 17vw !important;
+  }
+  .h31 {
+    font-size: 15px !important;
+  }
+  }
+
+
+
+@media only screen and (max-width:450px) {
+  .netflixImage {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.8) 0,
+        rgba(0, 0, 0, 0) 40%,
+        rgba(0, 0, 0, 0) 75%,
+        rgba(0, 0, 0, 0.8) 100%
+      ),
+      linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 0,
+        rgba(0, 0, 0, 0) 40%,
+        rgba(0, 0, 0, 0) 75%,
+        rgba(0, 0, 0, 0.8) 100%
+      ),
+      url("../../images/netflix-image.jpg") !important;
+    height: 100vh !important;
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+  .imgPadder {
+    padding: 0px !important;
+  }
+  .gradient-im {
+    z-index: 1 !important;
+    position: absolute !important;
+    height: 100vh !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background-color: black !important;
+    opacity: 0.4 !important;
+  }
+  .pos {
+    position: relative !important;
+  }
+  .searchBox {
+    z-index: 2 !important;
+    position: absolute;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    color: white !important;
+    padding-left: 14vw !important;
+    padding-top: 30vw !important;
+    background: transparent !important;
+    padding-right:12px!important;
+    overflow: hidden !important;
+  }
+  .h1__tag {
+    font-size: 9vw !important;
+    font-weight: 1000 !important;
+  }
+  .h1__2__tag {
+    font-size: 9vw !important;
+    font-weight: 700 !important;
+  }
+  h5 {
+    line-height: 3rem !important;
+  }
+  .input1 {
+    width: 70vw!important;
+    height: 15vw !important;
+  }
+  .button__text{
+    font-size:15px!important
+  }
+  .start {
+    height:30px!important;
+    margin-top: 10vw !important;
+    width: 70vw!important;
+    background-color: red !important;
+  }
+  .h4__1__tag {
+    display: none !important;
+  }
+  .h4__1 {
+    font-size: 5vw!important;
+    line-height: 17vw !important;
+  }
+  .h31 {
+    font-size: 5vw !important;
+  }
+  }
+  @media only screen and (max-width:200px) {
+    .netflixImage {
+      background-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.8) 0,
+          rgba(0, 0, 0, 0) 40%,
+          rgba(0, 0, 0, 0) 75%,
+          rgba(0, 0, 0, 0.8) 100%
+        ),
+        linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.8) 0,
+          rgba(0, 0, 0, 0) 40%,
+          rgba(0, 0, 0, 0) 75%,
+          rgba(0, 0, 0, 0.8) 100%
+        ),
+        url("../../images/netflix-image.jpg") !important;
+      height: 100vh !important;
+      background-size: cover !important;
+      background-position: center center !important;
+    }
+    .imgPadder {
+      padding: 0px !important;
+    }
+    .gradient-im {
+      z-index: 1 !important;
+      position: absolute !important;
+      height: 100vh !important;
+      top: 0 !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      background-color: black !important;
+      opacity: 0.4 !important;
+    }
+    .pos {
+      position: relative !important;
+    }
+    .searchBox {
+      z-index: 2 !important;
+      position: absolute;
+      top: 0 !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      color: white !important;
+      padding-left: 14vw !important;
+      padding-top: 60vw !important;
+      background: transparent !important;
+    }
+    .h1__tag {
+      font-size: 8vw !important;
+      font-weight: 1000 !important;
+    }
+    .h1__2__tag {
+      font-size: 9vw !important;
+      font-weight: 700 !important;
+    }
+    h5 {
+      line-height: 3rem !important;
+    }
+    .input1 {
+      width: 89vw!important;
+      height: 30vw !important;
+    }
+    .start {
+      margin-top: 20vw !important;
+      width: 90vw!important;
+      background-color: red !important;
+    }
+    .h4__1__tag {
+      display: none !important;
+    }
+    .h4__1 {
+      font-size: 8vw!important;
+      line-height: 17vw !important;
+    }
+    .h31 {
+      font-size: 2vw !important;
+    }
+   
+    .button__text{
+      font-size:15px!important
+    } }
+  
