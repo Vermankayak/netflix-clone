@@ -18,7 +18,7 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route exact path="/auth/:wid" component={Login} /> 
       <Route exact path="/browse" component={Browse} />
-      <Route exact path="/payment-success/:stripeToken" component={PaymentSuccess} />
+      <Route exact path="https://master.d2t5kjbxkpu28u.amplifyapp.com//payment-success/:stripeToken" component={PaymentSuccess} />
       <Route exact path="/account" component={Account} />
     </div>
     </Router>
