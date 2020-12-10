@@ -14,6 +14,7 @@ class PaymentSuccess extends Component{
   }
   async componentDidMount() {
     const stripeToken = this.props.match.params.stripeToken;
+    console.log(stripeToken)
     const token = this.props.authReducer.token;
     const data = {stripeToken,token};
     const successUrl = window.reqUrl +"/payment/success";
