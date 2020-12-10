@@ -5,19 +5,22 @@ import {connect} from "react-redux"
 import { bindActionCreators } from 'redux'
 import updateNavBar from '../../action/navBarAction'
 import logout from '../../action/logout'
+import accountAction from '../../action/accountAction'
 
 class NavBar extends Component{
   constructor(props) {
     super(props)
     this.props=props
+    console.log(this.props)
   }
   //if this.state.page==home ----> show NavBar 1 else show NavBar 2
   handleLogout = () => {
+    this.props.accountAction({bg_color:["bg-success","bg-primary", "bg-primary", "bg-primary"], plan:0})
     this.props.logout({})
   }
   render() {
     let renderer;
-    if (this.props.updateNav === "home"){
+    if (this.props.history.location.pathname === "/"){
      renderer = (<div className="row">
                         <ul className="nav">
                           <li className="nav-item navbars" style={{paddingRight:"5%", paddingTop:"2%"}}>
@@ -28,7 +31,7 @@ class NavBar extends Component{
                           </ul>
                         </div>)
     }
-    else if(this.props.updateNav === "signIn" || this.props.updateNav === "signUp") {
+    else if(this.props.history.location.pathname === "signIn" || this.props.history.location.pathname === "signUp") {
       renderer = ""
     }
     else{
@@ -37,7 +40,10 @@ class NavBar extends Component{
         <li className="nav-item">
     <a className="nav-link" style={{color:"white", fontWeight:"bold"}} href="#">Logged In as: {this.props.authReducer.email}</a>
         </li>
+
+        <li className="nav-item"><Link className="nav-link" style={{color:"white", fontWeight:"bold"}} to="/account">Account</Link></li>
         <li className="nav-item">
+          
     <button onClick={this.handleLogout} className="nav-link border border-0" style={{color:"white", fontWeight:"bold", background:"transparent"}}>Logout</button>
         </li>
       </ul>
@@ -51,7 +57,8 @@ class NavBar extends Component{
 }
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    logout:logout
+    logout:logout,
+    accountAction:accountAction
   }, dispatch)
 }
 function mapStateToProps(state) {

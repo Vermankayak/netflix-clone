@@ -7,6 +7,7 @@ import Login from './components/Login/Login'
 import Browse from './components/Browse/Browse'
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 import PaymentSuccess from './components/PaymentSuccess/PaymentSuccess'
+import Account from './components/Account/Account';
 
 function App() {
   
@@ -18,6 +19,7 @@ function App() {
       <Route exact path="/auth/:wid" component={Login} /> 
       <Route exact path="/browse" component={Browse} />
       <Route exact path="/payment-success/:stripeToken" component={PaymentSuccess} />
+      <Route exact path="/account" component={Account} />
     </div>
     </Router>
   );

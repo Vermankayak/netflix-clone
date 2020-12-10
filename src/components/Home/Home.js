@@ -14,11 +14,12 @@ class Home extends Component{
     this.state={}
   }
   componentDidMount() {
+    if (this.props.auth.token) {
+      this.props.history.push('/browse')
+    }
     this.props.updateNavBar(this.props.match.path,0)
   }
   render() {
-    
-   
     return(
       <div className="container-fluid pos">
         <div className="row">
@@ -60,4 +61,9 @@ function mapDispatchToProps(dispatch) {
     updateNavBar:updateNavBar
   }, dispatch)
 }
-export default connect(null, mapDispatchToProps)(Home)
+function mapStateToProps(state) {
+return({
+  auth:state.authReducer
+})
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

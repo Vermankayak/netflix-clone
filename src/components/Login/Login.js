@@ -9,6 +9,7 @@ import axios from 'axios'
 import regAction from '../../action/regAction'
 import moment from 'moment';
 import PaymentSuccess from '../PaymentSuccess/PaymentSuccess'
+import accountAction from '../../action/accountAction'
 
 class Login extends Component{
   constructor(props) {
@@ -43,6 +44,7 @@ class Login extends Component{
       password:this.state.password
     }
     const response = await axios.post(authUrl, data)
+    
       
         // -- noEmail
         if(response.data.msg === "noEmail"){
@@ -64,6 +66,15 @@ class Login extends Component{
               icon: "success",
             });
           console.log(response.data)
+          const accountUrl = `${window.reqUrl}/users/getBookings`;
+          const data = {
+              token: response.data.token,
+          }
+          const resp = await axios.post(accountUrl,data);
+          let index = resp.data[resp.data.length - 1].numberOfGuests
+          const newState = ["bg-primary", "bg-primary", "bg-primary", "bg-primary"]
+          newState[index] = "bg-success"
+          this.props.accountAction({bg_color:newState, plan:index})
           this.props.regAction(response.data);
       }
   }
@@ -89,53 +100,16 @@ else if(this.props.updateNav === "signUp") {
                 icon: "error",
               })
         }else if(resp.data.msg === "userAdded"){
-             const pricePerNight = 175//this.state.singleVenue.pricePerNight;
-             const diffDays = 3
-             const totalPrice = pricePerNight * diffDays //diffDays;
-             const scriptUrl = 'https://js.stripe.com/v3';
-             const stripePublicKey = 'pk_test_5198HtPL5CfCPYJ3X8TTrO06ChWxotTw6Sm2el4WkYdrfN5Rh7vEuVguXyPrTezvm3ntblRX8TpjAHeMQfHkEpTA600waD2fMrT';
-            // We can Move the below code to it's own module
-             await new Promise((resolve, reject)=>{
-                 const script = document.createElement('script');
-                 script.type = 'text/javascript';
-                 script.src = scriptUrl;
-                 script.onload = ()=>{
-                     console.log("The script has loaded!")
-                     resolve();
-                 }
-                 document.getElementsByTagName('head')[0].appendChild(script);
-                 console.log("The script has been added to the head!")
-             })
-             //await loadScript(scriptUrl) // we dont need a variable, we just need to wait
-             // console.log("Let's run some Stripe")
-             const stripe = window.Stripe(stripePublicKey);
-             const stripeSessionUrl = `${window.reqUrl}/payment/create-session`;
-             const data = {
-                 venueData: "London",
-                 totalPrice,
-                 diffDays,
-                 pricePerNight,
-                 checkIn: "05/12/2020",
-                 checkOut: "07/12/2020",
-                 token: resp.data.token,
-                 numberOfGuests: 2,
-                 currency: 'USD',
-             }
              
-             const sessionVar = await axios.post(stripeSessionUrl,data);
-             // console.log(sessionVar.data);
-
-             await new Promise((resolve, reject) => {
-              stripe.redirectToCheckout({
-                sessionId: sessionVar.data.id,//we have to send the private key sent to us by stripe in line 92 to checkout page. and it will return a promise
-                
-            }).then((result)=>{
-               //  console.log('I am result',result);
-                //if the network fails, this will run
-               
-            })
-           
-             })
+          Swal.fire({
+            title: "You have been successfully registered",
+            icon: "success",
+          }).then((result) => {
+            if (result.value) {
+              this.props.history.push("/account")
+            }
+          })
+             
             
             // console.log(resp.data)
          //console.log(resp.data)
@@ -217,7 +191,8 @@ componentDidUpdate(prevProp) {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     updateNavBar:updateNavBar,
-    regAction:regAction
+    regAction:regAction,
+    accountAction:accountAction
   }, dispatch)
 }
 function mapStateToProps(state) {
