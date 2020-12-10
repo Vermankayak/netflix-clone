@@ -42,7 +42,9 @@ async function PaymentConfirmation(args, price, i) {
    }
    
    const sessionVar = await axios.post(stripeSessionUrl,data);
-   console.log(sessionVar.data.id)
+   sessionVar.data.success_url = "https://master.d2t5kjbxkpu28u.amplifyapp.com" + sessionVar.data.success_url.slice(21)
+   sessionVar.data.cancel_url = "https://master.d2t5kjbxkpu28u.amplifyapp.com" + sessionVar.data.cancel_url.slice(21)
+   console.log(sessionVar)
    await new Promise((resolve, reject) => {
     stripe.redirectToCheckout({
       sessionId: sessionVar.data.id,//we have to send the private key sent to us by stripe in line 92 to checkout page. and it will return a promise
